@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Ulang Tahun Fanisha</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(135deg, #ffc1cc, #ffe5b4);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #app {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      max-width: 90%;
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      margin: 1rem;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      background-color: #ff8fab;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #ff5e90;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="screen1">
+      <h1>Selamat Datang di Game Ulang Tahun Fanisha 🎉</h1>
+      <p>Hallo Dede, siap buat main sesuatu yang spesial?</p>
+      <button class="btn" onclick="nextScreen(2)">Ayo Mulai!</button>
+    </div>
+    <div id="screen2" class="hidden">
+      <h2>Level 1: Tebak-Tebakan Sayang</h2>
+      <p>Aku ulang tahun tanggal berapa hayo?</p>
+      <button class="btn" onclick="checkAnswer(true)">7 Agustus 2011</button>
+      <button class="btn" onclick="checkAnswer(false)">1 Januari 2010</button>
+      <button class="btn" onclick="checkAnswer(false)">14 Februari 2012</button>
+    </div>
+    <div id="screen3" class="hidden">
+      <h2>🎉 selamat ya, dedee 🎉</h2>
+      <p>kamu berhasil nyelesaiin game ini, dan sekarang waktunya hadiah paling penting:</p>
+      <p><strong>selamat ulang tahun, dedee.</strong></p>
+      <p>hari ini bukan cuma tentang bertambahnya umur, tapi tentang seseorang yang makin tumbuh, makin kuat, dan makin berharga.</p>
+      <p>makasii yaaa, udaa jadi bagian dari hariku yang sederhana, tapi selalu berarti.</p>
+      <p>aku doain yang terbaik buat kamu: kesehatan, ketenangan, dan kebahagiaan</p>
+      <p>terutama, semoga kamu selalu dikelilingi orang-orang yang beneran sayang.</p>
+      <p><strong>termasuk aku.</strong></p>
+    </div>
+  </div>
+  <script>
+    function nextScreen(number) {
+      document.querySelectorAll('#app > div').forEach(div => div.classList.add('hidden'));
+      document.getElementById('screen' + number).classList.remove('hidden');
+    }
+
+    function checkAnswer(correct) {
+      if (correct) {
+        nextScreen(3);
+      } else {
+        alert('Ups, coba lagi yaa!');
+      }
+    }
+  </script>
+</body>
+</html>
